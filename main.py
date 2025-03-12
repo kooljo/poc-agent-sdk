@@ -1,3 +1,4 @@
+from dotenv import load_dotenv
 from fastapi import FastAPI, UploadFile, File, HTTPException, Form
 from pydantic import BaseModel
 import openai
@@ -9,6 +10,8 @@ import pdfplumber
 from sqlalchemy import Column, Integer, String, create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+
+load_dotenv()
 
 # Initialize FastAPI app
 app = FastAPI(title="A quick FastAPI to test OpenAI SDK agent")
